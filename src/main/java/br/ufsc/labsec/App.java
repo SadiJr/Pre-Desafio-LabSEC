@@ -3,13 +3,11 @@ package br.ufsc.labsec;
 public class App {
 	public static void main(String[] args) {
 		try {
-			System.out.println("Iniciando testes!");
-			String convertToBase64 = HexToBase64Converter.convertToBase64("49276d206b696c6c6"
-					+ "96e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d7573"
-					+ "68726f6f6d");
-			System.out.println("Resultado da conversão = " + convertToBase64);
+			
+			String xorCombination = XORCombinationCryptography.xorCombination("1c0111001f010100061a024b53535009181c", 
+				"686974207468652062756c6c277320657965");
+			System.out.println(xorCombination);
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
 		}
 	}
 }
