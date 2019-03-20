@@ -4,6 +4,14 @@ import org.apache.commons.codec.DecoderException;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.binary.Hex;
 
+/**
+ * 
+ * @author Sadi
+ * 
+ * Não foi preciso pensar muito. Já tinha trabalhado antes com conversões de vários 
+ * formatos para Base64, e já tinha conhecimento da biblioteca Apache Commons.
+ *
+ */
 public class HexToBase64Converter {
 	
 	public static String convertToBase64(String hex) throws DecoderException {
