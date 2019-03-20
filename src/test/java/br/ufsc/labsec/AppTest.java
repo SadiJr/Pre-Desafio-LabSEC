@@ -1,38 +1,22 @@
 package br.ufsc.labsec;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import static org.junit.Assert.fail;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+import org.junit.Assert;
+import org.junit.Test;
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+public class AppTest {
+	
+	@Test
+	public void shouldConvertHexStringToBase64Correctly() {
+		try {
+			String convertToBase64 = HexToBase64Converter.convertToBase64("49276d206b696c6c6"
+				+ "96e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d7573"
+				+ "68726f6f6d");
+			Assert.assertEquals("SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t", convertToBase64);
+		} catch (Exception e) {
+			fail("Um erro inesperado ocorreu");
+		}
+	}
 }
