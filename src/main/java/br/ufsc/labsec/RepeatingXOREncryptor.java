@@ -20,7 +20,6 @@ public class RepeatingXOREncryptor {
 			byte[] xorCombination = XORCombinationCryptography.xorCombination(new byte[]{bytes[i]}, (byte) keys[i % 3]);
 			result.append(new String(xorCombination));
 		}
-		System.out.println(Hex.encodeHex(result.toString().getBytes()));
 		return new String(Hex.encodeHex(result.toString().getBytes()));
 	}
 }

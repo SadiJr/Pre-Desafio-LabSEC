@@ -17,4 +17,8 @@ public class HexToBase64Converter {
 	public static String convertToBase64(String hex) throws DecoderException {
 		return new String(Base64.encodeBase64(Hex.decodeHex(hex.toCharArray())));
 	}
+	
+	public static String convertToHex(String base64) {
+		return new String(Hex.encodeHex(Base64.decodeBase64(base64.getBytes())));
+	}
 }
