@@ -36,10 +36,11 @@ public class AppTest {
 	@Test
 	public void shouldDescryptMessage() {
 		try {
-			Map<Character, String> decryptMessage = SingleXORCipher.decryptMessage("1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736");
+			Map<Character, Map<String, Double>> decryptMessage = SingleXORCipher.decryptMessage("1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736");
 			char key = (Character) decryptMessage.keySet().toArray()[0];
 			Assert.assertEquals('X', key);
-			Assert.assertEquals("Cooking MC's like a pound of bacon", decryptMessage.get(key));
+			String message = (String) decryptMessage.get(key).keySet().toArray()[0];
+			Assert.assertEquals("Cooking MC's like a pound of bacon", message);
 		} catch (Exception e) {
 			fail("Um erro inesperado ocorreu");
 		}

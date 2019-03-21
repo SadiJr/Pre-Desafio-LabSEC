@@ -24,7 +24,7 @@ import org.apache.commons.codec.binary.Hex;
  */
 public class SingleXORCipher {
 
-	public static Map<Character, String> decryptMessage(String message) throws DecoderException, UnsupportedEncodingException {
+	public static Map<Character, Map<String, Double>> decryptMessage(String message) throws DecoderException, UnsupportedEncodingException {
 		double maxFrequency = 0.0;
 		String result = "";
 		char key = ' ';
@@ -39,8 +39,12 @@ public class SingleXORCipher {
 //				System.out.println("Message: " + new String(xorCombination, "UTF-8") + " - Key: " + i);
 			}
 		}
-		Map<Character, String> cryptography = new HashMap<Character, String>();
-		cryptography.put(key, result);
+		Map<Character, Map<String, Double>> cryptography = new HashMap<Character, Map<String, Double>>();
+		Map<String, Double> messageAndScore = new HashMap<String, Double>();
+		
+		messageAndScore.put(result, maxFrequency);
+		cryptography.put(key, messageAndScore);
+		
 		return cryptography;
 	}
 	
