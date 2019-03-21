@@ -1,12 +1,10 @@
 package br.ufsc.labsec;
 
-import java.util.Map;
-
 public class App {
 	public static void main(String[] args) {
 		try {
-			Map<Character, String> decryptFile = SingleCharacterXOR.decryptFile();
-			System.out.println(decryptFile.keySet().toArray()[0]); 
+			RepeatingXOREncryptor.encrypt("Burning 'em, if you ain't quick and nimble\n");
+			RepeatingXOREncryptor.encrypt("I go crazy when I hear a cymbal");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
