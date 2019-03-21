@@ -45,4 +45,17 @@ public class AppTest {
 			fail("Um erro inesperado ocorreu");
 		}
 	}
+	
+	@Test
+	public void shouldDescryptFile() {
+		try {
+			Map<Character, String> decryptFile = SingleCharacterXOR.decryptFile();
+			char key = (Character) decryptFile.keySet().toArray()[0];
+			Assert.assertEquals('5', key);
+			String message = (String) decryptFile.get(key);
+			Assert.assertEquals("Now that the party is jumping", message);
+		} catch (Exception e) {
+			fail("Um erro inesperado ocorreu");
+		}
+	}
 }
