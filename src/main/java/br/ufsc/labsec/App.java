@@ -4,10 +4,10 @@ public class App {
 	public static void main(String[] args) {
 		try {
 			
-			String xorCombination = XORCombinationCryptography.xorCombination("1c0111001f010100061a024b53535009181c", 
-				"686974207468652062756c6c277320657965");
-			System.out.println(xorCombination);
+			SingleXORCipher.decryptMessage("1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736");
+			
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }

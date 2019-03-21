@@ -2,6 +2,8 @@ package br.ufsc.labsec;
 
 import static org.junit.Assert.fail;
 
+import java.util.Map;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -26,6 +28,18 @@ public class AppTest {
 			String xorCombination = XORCombinationCryptography.xorCombination("1c0111001f010100061a024b53535009181c",
 					"686974207468652062756c6c277320657965");
 			Assert.assertEquals("746865206b696420646f6e277420706c6179", xorCombination);
+		} catch (Exception e) {
+			fail("Um erro inesperado ocorreu");
+		}
+	}
+	
+	@Test
+	public void shouldDescryptMessage() {
+		try {
+			Map<Character, String> decryptMessage = SingleXORCipher.decryptMessage("1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736");
+			char key = (Character) decryptMessage.keySet().toArray()[0];
+			Assert.assertEquals('X', key);
+			Assert.assertEquals("Cooking MC's like a pound of bacon", decryptMessage.get(key));
 		} catch (Exception e) {
 			fail("Um erro inesperado ocorreu");
 		}
