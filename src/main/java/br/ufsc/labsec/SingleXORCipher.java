@@ -48,7 +48,7 @@ public class SingleXORCipher {
 		return cryptography;
 	}
 	
-	public static double frequency(byte[] text) {
+	public static int frequency(byte[] text) {
 		int frequency = 0;
 		for (byte b : text) {
 			if (isUTFCharacter(b)) {
