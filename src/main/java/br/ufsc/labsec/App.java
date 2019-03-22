@@ -1,10 +1,14 @@
 package br.ufsc.labsec;
 
+import java.io.File;
+
+import org.apache.commons.io.FileUtils;
+
 public class App {
 	public static void main(String[] args) {
 		try {
-			RepeatingXOREncryptor.encrypt("Burning 'em, if you ain't quick and nimble\n");
-			RepeatingXOREncryptor.encrypt("I go crazy when I hear a cymbal");
+			String file = new String(FileUtils.readFileToByteArray(new File("src/main/resources/challenge_08.txt")));
+			DetectAES.detect(file);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

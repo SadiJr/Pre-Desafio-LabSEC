@@ -30,7 +30,6 @@ public class AES128ECBDecryptor {
 		key = new SecretKeySpec(k.getBytes(), "AES");
 		Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
 		cipher.init(Cipher.DECRYPT_MODE, key);
-		System.out.println(new String(cipher.doFinal(Base64.decodeBase64(text.getBytes()))));
 		return new String(cipher.doFinal(Base64.decodeBase64(text.getBytes()))).trim();
 	}
 }
